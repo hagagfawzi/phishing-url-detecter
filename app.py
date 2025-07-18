@@ -3,8 +3,10 @@ import requests
 from flask import Flask, render_template, request, jsonify
 import joblib
 import re
+from flask_cors import CORS  # ← مهم لتمكين CORS
 
 app = Flask(__name__)
+CORS(app)  # ← يسمح بالوصول من أي origin (Frontend مثلاً)
 
 # Google Drive file ID and path
 VECTOR_FILE_ID = "1vYmOBtA0U6xMr-h0VG4jWhENgolex8wL"
